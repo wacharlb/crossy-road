@@ -30,16 +30,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        IsVisible();
         CanIdle();
         CanMove();
+        IsVisible();
     }
 
     void CanIdle()
     {
         if(isIdle)
         {
-            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 CheckIfCanMove();
             }
@@ -50,6 +50,24 @@ public class PlayerController : MonoBehaviour
     {
         // Raycast - Find if there is any collider box in front of player
         RaycastHit hit;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+        }
+
         Physics.Raycast(this.transform.position, -chick.transform.up, out hit, colliderDistCheck);
 
         Debug.DrawRay(this.transform.position, -chick.transform.up * colliderDistCheck, Color.red, 2);
@@ -60,9 +78,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if(hit.collider.tag == "Collider")
+            if(hit.collider.tag == "collider")
             {
-                Debug.Log("Hit something with collider tag.");
+                //Debug.Log("Hit something with collider tag.");
             }
             else
             {
@@ -73,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     void SetMove()
     {
-        Debug.Log("Hit noithing. Keep moving.");
+        //Debug.Log("Hit noithing. Keep moving.");
 
         isIdle = false;
         isMoving = true;
@@ -83,8 +101,8 @@ public class PlayerController : MonoBehaviour
     void CanMove()
     {
         if(isMoving)
-        {
-            if(Input.GetKeyUp(KeyCode.UpArrow))
+        {   
+            if (Input.GetKeyUp(KeyCode.UpArrow))
             {
                 Moving(new Vector3(transform.position.x, transform.position.y, transform.position.z + moveDistance));
                 SetMoveForwardState();
@@ -116,8 +134,8 @@ public class PlayerController : MonoBehaviour
 
     void MoveComplete()
     {
-        isIdle = true;
         isJumping = false;
+        isIdle = true;
     }
 
     void SetMoveForwardState()
@@ -127,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     void IsVisible()
     {
-        Debug.Log("renderer.isVisible: " + renderer.isVisible);
+        //Debug.Log("renderer.isVisible: " + renderer.isVisible);
         if (renderer.isVisible)
         {
             isVisible = true;
@@ -135,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
         if(!renderer.isVisible && isVisible)
         {
-            Debug.Log("Player off screen. Apply GotHit()");
+            //Debug.Log("Player off screen. Apply GotHit()");
 
             GotHit();
         }
