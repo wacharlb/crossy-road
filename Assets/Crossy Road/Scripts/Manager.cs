@@ -16,6 +16,7 @@ public class Manager : MonoBehaviour
     private bool canPlay = false;
 
     private static Manager s_Instance;
+
     public static Manager instance
     {
         get
