@@ -50,12 +50,35 @@ public class PlayerController : MonoBehaviour
     {
         if(isIdle)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                CheckIfCanMove();
-
-                PlayAudioClip(audioIdle1);
+                CheckIfIdle(270, 0, 0);
             }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                CheckIfIdle(270, 180, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                CheckIfIdle(270, -90, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                CheckIfIdle(270, 90, 0);
+            }
+        }
+    }
+
+    void CheckIfIdle(float x, float y, float z)
+    {
+        chick.transform.rotation = Quaternion.Euler(x, y, z);
+
+        CheckIfCanMove();
+
+        int a = Random.Range(0, 12);
+        if(a < 4)
+        {
+            PlayAudioClip(audioIdle1);
         }
     }
 
@@ -63,23 +86,6 @@ public class PlayerController : MonoBehaviour
     {
         // Raycast - Find if there is any collider box in front of player
         RaycastHit hit;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            this.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-        }
 
         Physics.Raycast(this.transform.position, -chick.transform.up, out hit, colliderDistCheck);
 
@@ -94,6 +100,7 @@ public class PlayerController : MonoBehaviour
             if(hit.collider.tag == "collider")
             {
                 //Debug.Log("Hit something with collider tag.");
+                isIdle = true;
             }
             else
             {
@@ -156,7 +163,11 @@ public class PlayerController : MonoBehaviour
         isIdle = true;
 
         // Play audio clip for player movement complete
-        PlayAudioClip(audioIdle2);
+        int a = Random.Range(0, 12);
+        if (a < 4)
+        {
+            PlayAudioClip(audioIdle2);
+        }
     }
 
     void SetMoveForwardState()
