@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 6583406}
   - component: {fileID: 2389946}
   - component: {fileID: 5450134}
+  - component: {fileID: 114208097487509872}
   m_Layer: 0
   m_Name: trafficLight (1)
   m_TagString: Untagged
@@ -65,6 +66,7 @@ GameObject:
   - component: {fileID: 6532830}
   - component: {fileID: 2381732}
   - component: {fileID: 5411338}
+  - component: {fileID: 114705148186905390}
   m_Layer: 0
   m_Name: trafficLight
   m_TagString: Untagged
@@ -202,6 +204,7 @@ GameObject:
   - component: {fileID: 6576790}
   - component: {fileID: 2343248}
   - component: {fileID: 5457420}
+  - component: {fileID: 114687126602786476}
   m_Layer: 0
   m_Name: trafficLight (1)
   m_TagString: Untagged
@@ -377,7 +380,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438328}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &433292
 Transform:
@@ -416,8 +419,8 @@ Transform:
   m_LocalScale: {x: 0.006, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 442102}
-  - {fileID: 456758}
   - {fileID: 432738}
+  - {fileID: 456758}
   m_Father: {fileID: 409302}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -474,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438328}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &458674
 Transform:
@@ -1356,6 +1359,18 @@ Transform:
   m_Father: {fileID: 4563811591994040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114208097487509872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f18ce37181fecb4ca1c3e06942e17a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 176258}
 --- !u!114 &114262464183080034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1379,6 +1394,30 @@ MonoBehaviour:
   goLeft: 0
   spawnLeftPos: 0
   spawnRightPos: 0
+--- !u!114 &114687126602786476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f18ce37181fecb4ca1c3e06942e17a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 184264}
+--- !u!114 &114705148186905390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f18ce37181fecb4ca1c3e06942e17a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 193030}
 --- !u!114 &114877721989842138
 MonoBehaviour:
   m_ObjectHideFlags: 1
