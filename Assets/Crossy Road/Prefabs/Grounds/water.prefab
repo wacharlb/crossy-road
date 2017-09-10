@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3330634}
   - component: {fileID: 6584846}
   - component: {fileID: 2330580}
-  - component: {fileID: 11448028}
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
@@ -84,17 +83,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.2, z: 1}
   m_Center: {x: 0, y: 0.1, z: 0}
---- !u!114 &11448028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e85060814791da47ba6054a09aca085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -126,7 +114,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4174307981754938}
-  - component: {fileID: 114686707826275864}
   - component: {fileID: 114294075385149978}
   m_Layer: 0
   m_Name: spawnController
@@ -143,7 +130,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4987750912624368}
-  - component: {fileID: 114612523508457664}
   - component: {fileID: 114137256180569046}
   m_Layer: 0
   m_Name: spawnLeft
@@ -151,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1552678258486438
 GameObject:
   m_ObjectHideFlags: 1
@@ -160,7 +146,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4344737598462928}
-  - component: {fileID: 114091618342707150}
   - component: {fileID: 114575610966380230}
   m_Layer: 0
   m_Name: spawnLeft
@@ -168,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1568562599275532
 GameObject:
   m_ObjectHideFlags: 1
@@ -177,7 +162,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4208336761934126}
-  - component: {fileID: 114033905582985288}
   - component: {fileID: 114384643718515012}
   m_Layer: 0
   m_Name: spawnRight
@@ -185,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1775731605282738
 GameObject:
   m_ObjectHideFlags: 1
@@ -194,7 +178,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4147981353404570}
-  - component: {fileID: 114969029873662038}
   - component: {fileID: 114372108974748526}
   m_Layer: 0
   m_Name: spawnRight
@@ -202,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4147981353404570
 Transform:
   m_ObjectHideFlags: 1
@@ -272,28 +255,6 @@ Transform:
   m_Father: {fileID: 4174307981754938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114033905582985288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1568562599275532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114091618342707150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1552678258486438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114137256180569046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,36 +370,3 @@ MonoBehaviour:
   goLeft: 0
   spawnLeftPos: 0
   spawnRightPos: 0
---- !u!114 &114612523508457664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1303157983923772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114686707826275864
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1249642901094506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114969029873662038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1775731605282738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 

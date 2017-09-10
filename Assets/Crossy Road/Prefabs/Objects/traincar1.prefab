@@ -26,7 +26,6 @@ GameObject:
   m_Component:
   - component: {fileID: 444984}
   - component: {fileID: 6535132}
-  - component: {fileID: 11403120}
   - component: {fileID: 8293908}
   - component: {fileID: 114542029330091078}
   m_Layer: 0
@@ -264,22 +263,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11403120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35f3593c6d1cb94fa9e4427cf5b837f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  moveDirection: 0
-  parentOnTrigger: 0
-  hitBoxOnTrigger: 1
-  moverObject: {fileID: 178432}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
