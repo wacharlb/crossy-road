@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3330634}
   - component: {fileID: 6584846}
   - component: {fileID: 2330580}
+  - component: {fileID: 114140658020420656}
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+  m_LocalPosition: {x: -0.00000047684, y: -0.5, z: 1}
   m_LocalScale: {x: 50, y: 1, z: 2}
   m_Children:
   - {fileID: 4174307981754938}
@@ -267,10 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 4987750912624368}
-  delayMin: 2.5
-  delayMax: 5
+  delayMin: 3
+  delayMax: 4
   speedMin: 1
-  speedMax: 5
+  speedMax: 3
   useSpawnPlacement: 0
   spawnCountMin: 4
   spawnCountMax: 20
@@ -278,6 +279,17 @@ MonoBehaviour:
   goLeft: 0
   spawnLeftPos: 0
   spawnRightPos: 0
+--- !u!114 &114140658020420656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bae94f34dff09f48bf0ccf10becec1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114294075385149978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,10 +325,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 4147981353404570}
-  delayMin: 2.5
-  delayMax: 5
+  delayMin: 3
+  delayMax: 4
   speedMin: 1
-  speedMax: 5
+  speedMax: 3
   useSpawnPlacement: 0
   spawnCountMin: 4
   spawnCountMax: 20
@@ -336,10 +348,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 4208336761934126}
-  delayMin: 2.5
-  delayMax: 5
+  delayMin: 3
+  delayMax: 4
   speedMin: 1
-  speedMax: 5
+  speedMax: 3
   useSpawnPlacement: 0
   spawnCountMin: 4
   spawnCountMax: 20
@@ -359,10 +371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {fileID: 4344737598462928}
-  delayMin: 2.5
-  delayMax: 5
+  delayMin: 3
+  delayMax: 4
   speedMin: 1
-  speedMax: 5
+  speedMax: 3
   useSpawnPlacement: 0
   spawnCountMin: 4
   spawnCountMax: 20

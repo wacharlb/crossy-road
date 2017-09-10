@@ -13,6 +13,7 @@ public class Mover : MonoBehaviour
     private Renderer renderer = null;
     private bool isVisible = false;
     int count = 0;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -58,6 +59,8 @@ public class Mover : MonoBehaviour
                 Debug.Log("Enter: Parent to me");
 
                 other.transform.parent = this.transform;
+
+                other.GetComponent<PlayerController>().parentedToObject = true;
             }
 
             if(hitBoxOnTrigger)
@@ -78,6 +81,8 @@ public class Mover : MonoBehaviour
                 Debug.Log("Exit.");
 
                 other.transform.parent = null;
+
+                other.GetComponent<PlayerController>().parentedToObject = false;
             }
         }
     }

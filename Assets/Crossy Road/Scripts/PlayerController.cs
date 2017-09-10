@@ -13,6 +13,14 @@ public class PlayerController : MonoBehaviour
     public bool jumpStart = false;
     public ParticleSystem particle = null;
     public GameObject chick = null;
+    public AudioClip audioIdle1 = null;
+    public AudioClip audioIdle2 = null;
+    public AudioClip audioHop = null;
+    public AudioClip audioHit = null;
+    public AudioClip audioSplash = null;
+    public ParticleSystem splash = null;
+    public bool parentedToObject = false;
+
     private Renderer renderer = null;
     private bool isVisible = false;
 
@@ -45,6 +53,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 CheckIfCanMove();
+
+                PlayAudioClip(audioIdle1);
             }
         }
     }
@@ -127,11 +137,16 @@ public class PlayerController : MonoBehaviour
 
     void Moving(Vector3 pos)
     {
+        // Set the appropriate game state for player moving
         isIdle = false;
         isMoving = false;
         isJumping = true;
         jumpStart = false;
 
+        // Play audio clip for player movement
+        PlayAudioClip(audioHop);
+
+        // Move player
         LeanTween.move(this.gameObject, pos, moveTime).setOnComplete(MoveComplete);
     }
 
@@ -139,6 +154,9 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = false;
         isIdle = true;
+
+        // Play audio clip for player movement complete
+        PlayAudioClip(audioIdle2);
     }
 
     void SetMoveForwardState()
@@ -168,7 +186,30 @@ public class PlayerController : MonoBehaviour
         ParticleSystem.EmissionModule em = particle.emission;
         em.enabled = true;
 
+        // Play audio clip for player getting hit
+        PlayAudioClip(audioHit);
+
         // Set game state to Game Over
         Manager.instance.GameOver();
+    }
+
+    public void GotSoaked()
+    {
+        isDead = true;
+        ParticleSystem.EmissionModule em = splash.emission;
+        em.enabled = true;
+
+        // Play audio clip for player getting soaked
+        PlayAudioClip(audioSplash);
+
+        chick.SetActive(false);
+
+        // Set game state to Game Over
+        Manager.instance.GameOver();
+    }
+
+    void PlayAudioClip(AudioClip clip)
+    {
+        this.GetComponent<AudioSource>().PlayOneShot(clip);
     }
 }
